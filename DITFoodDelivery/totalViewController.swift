@@ -17,11 +17,6 @@ class totalViewController: UIViewController {
     var tMapTel:[String] = []
     var annotations = [MKPointAnnotation]()
     
-   
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,9 +36,8 @@ class totalViewController: UIViewController {
         let pin02 = MKPointAnnotation()
         pin02.coordinate = center
         pin02.title = "동의과학대"
-        pin02.subtitle = "부산광역시 부산진구 양정동 양지로 54"
+        pin02.subtitle = "051-852-0011"
         totalMapView.addAnnotation(pin02)
-
     }
     var count = 0
     func  viewMap(tMapAddeess:[String], tMapName:[String], tMapTel:[String]) {
@@ -55,14 +49,12 @@ class totalViewController: UIViewController {
                     print(error)
                     return
                 }
-                
                 if placemarks != nil {
                     let placemark = placemarks![0]
                     print(placemarks![0])
-                    
+                
                     // pin point 을 저장
                     let annotation = MKPointAnnotation()
-                    
                     if let location = placemark.location {
                         // Add annotation
                         annotation.title = self.tMapName[self.count]
@@ -71,14 +63,10 @@ class totalViewController: UIViewController {
                         annotation.coordinate = location.coordinate
                         self.annotations.append(annotation)
                         self.totalMapView.addAnnotations(self.annotations)
-                        
                     }
                 }
                 self.totalMapView.showAnnotations(self.annotations, animated: true)
             })
         }
     }
-
-    
-
 }
