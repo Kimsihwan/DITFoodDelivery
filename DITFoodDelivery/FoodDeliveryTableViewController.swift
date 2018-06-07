@@ -86,6 +86,17 @@ class FoodDeliveryTableViewController: UITableViewController {
                 destinationController.cellTel = foodStoreTel[indexPath.row]
                 destinationController.cellMenu = foodStoreTel[indexPath.row]
             }
+        } else if segue.identifier == "totalMap" {
+            let destinationController = segue.destination as! totalViewController
+            
+            destinationController.tMapName = foodStoreNames
+            
+            destinationController.tMapAddeess = foodStoreAddress
+            
+            destinationController.tMapTel = foodStoreTel
+            
+            
+            
         }
      }
  
