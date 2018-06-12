@@ -29,6 +29,7 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
         detailTableView.dataSource = self
         detailTableView.delegate = self
         detailImage.image = UIImage(named: cellImage)
+        self.title = cellName
     }
     
     // tableView delegate 메소드 호출
@@ -40,21 +41,37 @@ class detailViewController: UIViewController, UITableViewDataSource, UITableView
         return 4
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = detailTableView.dequeueReusableCell(withIdentifier: "detail", for: indexPath)
+        
         
         switch indexPath.row {
         case 0:
-            cell.textLabel?.text = "음식점 종류: " + cellType
-            return cell
-        case 1:
-            cell.textLabel?.text = "메뉴: " + cellMenu
-            return cell
-        case 2:
+            let cell = detailTableView.dequeueReusableCell(withIdentifier: "detailcell", for: indexPath)
             cell.textLabel?.text = "주소: " + cellAddress
             return cell
-        default:
+        case 1:
+            let cell = detailTableView.dequeueReusableCell(withIdentifier: "detailcell", for: indexPath)
             cell.textLabel?.text = "전화번호: " + cellTel
             return cell
+        case 2:
+            let cell = detailTableView.dequeueReusableCell(withIdentifier: "detailcell", for: indexPath)
+            cell.textLabel?.text = "메뉴: " + cellMenu
+            return cell
+        default:
+            let cell = detailTableView.dequeueReusableCell(withIdentifier: "mapcell", for: indexPath) as! MapTableViewCell
+            cell.configure(location: cellAddress)
+            return cell
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailMapView" {
+            if detailTableView.indexPathForSelectedRow != nil {
+                let destinationController = segue.destination as! MapViewController
+                destinationController.location = cellAddress
+                destinationController.name = cellName
+                destinationController.tel = cellTel
+            }
         }
         
     }

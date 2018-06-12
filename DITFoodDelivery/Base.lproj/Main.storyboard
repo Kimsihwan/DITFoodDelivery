@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -111,11 +112,11 @@
                                     <constraint firstAttribute="height" constant="250" id="7LN-4y-97z"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7k8-dw-ESf">
-                                <rect key="frame" x="0.0" y="314" width="375" height="353"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7k8-dw-ESf">
+                                <rect key="frame" x="0.0" y="314" width="375" height="341"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detail" textLabel="cMB-ry-3NU" style="IBUITableViewCellStyleDefault" id="WTf-QL-WJ5">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailcell" textLabel="cMB-ry-3NU" style="IBUITableViewCellStyleDefault" id="WTf-QL-WJ5">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WTf-QL-WJ5" id="Zbz-Cq-8qa">
@@ -131,6 +132,33 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mapcell" rowHeight="283" id="SK5-d6-CMl" customClass="MapTableViewCell" customModule="DITFoodDelivery" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="283"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SK5-d6-CMl" id="fN9-Kr-yYp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="282.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gj9-kg-9IZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="239.5" id="bst-lg-Pb4"/>
+                                                    </constraints>
+                                                </mapView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Gj9-kg-9IZ" secondAttribute="bottom" constant="32" id="A8I-7g-GbW"/>
+                                                <constraint firstAttribute="trailing" secondItem="Gj9-kg-9IZ" secondAttribute="trailing" id="XeT-Wc-pTx"/>
+                                                <constraint firstItem="Gj9-kg-9IZ" firstAttribute="top" secondItem="fN9-Kr-yYp" secondAttribute="top" id="dDK-pf-ONS"/>
+                                                <constraint firstAttribute="trailing" secondItem="Gj9-kg-9IZ" secondAttribute="trailing" id="nnr-xh-AhB"/>
+                                                <constraint firstItem="Gj9-kg-9IZ" firstAttribute="leading" secondItem="fN9-Kr-yYp" secondAttribute="leading" id="qK4-DK-S6p"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailMapView" destination="Gj9-kg-9IZ" id="VwQ-lz-dMk"/>
+                                            <segue destination="Osi-wj-fkp" kind="show" identifier="detailMapView" action="showDetailViewController:sender:" id="Ll3-p4-ILW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -155,7 +183,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLg-qM-QyW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="-156"/>
+            <point key="canvasLocation" x="1052" y="-156.07196401799101"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="8od-t0-tZw">
+            <objects>
+                <viewController id="Osi-wj-fkp" customClass="MapViewController" customModule="DITFoodDelivery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I6e-wr-1v1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fVo-qO-VlA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pgd-jL-K6q" firstAttribute="bottom" secondItem="fVo-qO-VlA" secondAttribute="bottom" id="4sB-Eh-RY5"/>
+                            <constraint firstItem="pgd-jL-K6q" firstAttribute="trailing" secondItem="fVo-qO-VlA" secondAttribute="trailing" id="KZZ-OA-Seq"/>
+                            <constraint firstItem="fVo-qO-VlA" firstAttribute="leading" secondItem="pgd-jL-K6q" secondAttribute="leading" id="Uc6-bH-0Ex"/>
+                            <constraint firstItem="fVo-qO-VlA" firstAttribute="trailing" secondItem="pgd-jL-K6q" secondAttribute="trailing" id="agx-5P-atx"/>
+                            <constraint firstItem="fVo-qO-VlA" firstAttribute="top" secondItem="pgd-jL-K6q" secondAttribute="top" id="n6P-WA-oPk"/>
+                            <constraint firstItem="fVo-qO-VlA" firstAttribute="leading" secondItem="pgd-jL-K6q" secondAttribute="leading" id="pUE-Vp-irL"/>
+                            <constraint firstItem="fVo-qO-VlA" firstAttribute="top" secondItem="pgd-jL-K6q" secondAttribute="top" id="z7o-Fe-rmv"/>
+                            <constraint firstItem="pgd-jL-K6q" firstAttribute="bottom" secondItem="fVo-qO-VlA" secondAttribute="bottom" id="zal-6D-nd0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pgd-jL-K6q"/>
+                    </view>
+                    <connections>
+                        <outlet property="storeMapView" destination="fVo-qO-VlA" id="aWW-h8-UUz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jg0-Ws-fRv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1940" y="-59"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fJd-w3-A5t">

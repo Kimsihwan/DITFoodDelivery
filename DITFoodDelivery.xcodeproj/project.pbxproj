@@ -10,6 +10,9 @@
 		14C0100520BFC30C00A3F43B /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C0100420BFC30C00A3F43B /* DetailTableViewCell.swift */; };
 		14C0100720BFCCAD00A3F43B /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C0100620BFCCAD00A3F43B /* detailViewController.swift */; };
 		14C4988C20C90DEA00ADB131 /* totalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C4988B20C90DEA00ADB131 /* totalViewController.swift */; };
+		14E2386920CF917D009A9D49 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E2386820CF917D009A9D49 /* MapViewController.swift */; };
+		14E2386B20CF92BE009A9D49 /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E2386A20CF92BE009A9D49 /* MapTableViewCell.swift */; };
+		14E2386D20CF9A3B009A9D49 /* FoodStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E2386C20CF9A3B009A9D49 /* FoodStore.swift */; };
 		14F31D2520AD462000371496 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F31D2420AD462000371496 /* AppDelegate.swift */; };
 		14F31D2A20AD462000371496 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14F31D2820AD462000371496 /* Main.storyboard */; };
 		14F31D2C20AD462000371496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14F31D2B20AD462000371496 /* Assets.xcassets */; };
@@ -21,6 +24,9 @@
 		14C0100420BFC30C00A3F43B /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		14C0100620BFCCAD00A3F43B /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		14C4988B20C90DEA00ADB131 /* totalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = totalViewController.swift; sourceTree = "<group>"; };
+		14E2386820CF917D009A9D49 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		14E2386A20CF92BE009A9D49 /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
+		14E2386C20CF9A3B009A9D49 /* FoodStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodStore.swift; sourceTree = "<group>"; };
 		14F31D2120AD461F00371496 /* DITFoodDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DITFoodDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14F31D2420AD462000371496 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14F31D2920AD462000371496 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,6 +75,9 @@
 				14F31D2D20AD462000371496 /* LaunchScreen.storyboard */,
 				14F31D3020AD462000371496 /* Info.plist */,
 				14C4988B20C90DEA00ADB131 /* totalViewController.swift */,
+				14E2386820CF917D009A9D49 /* MapViewController.swift */,
+				14E2386A20CF92BE009A9D49 /* MapTableViewCell.swift */,
+				14E2386C20CF9A3B009A9D49 /* FoodStore.swift */,
 			);
 			path = DITFoodDelivery;
 			sourceTree = "<group>";
@@ -146,10 +155,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				14C0100520BFC30C00A3F43B /* DetailTableViewCell.swift in Sources */,
+				14E2386920CF917D009A9D49 /* MapViewController.swift in Sources */,
 				14F31D2520AD462000371496 /* AppDelegate.swift in Sources */,
+				14E2386B20CF92BE009A9D49 /* MapTableViewCell.swift in Sources */,
 				14F31D3720AD478900371496 /* FoodDeliveryTableViewController.swift in Sources */,
 				14C0100720BFCCAD00A3F43B /* detailViewController.swift in Sources */,
 				14C4988C20C90DEA00ADB131 /* totalViewController.swift in Sources */,
+				14E2386D20CF9A3B009A9D49 /* FoodStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
